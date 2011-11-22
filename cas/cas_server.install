@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_schema().
+ * Implementation of hook_schema().
  */
 function cas_server_schema() {
   $schema = array();
@@ -42,9 +42,22 @@ function cas_server_schema() {
   return $schema;
 }
 
+/**
+ * Implementation of hook_install().
+ */
+function cas_server_install() {
+  drupal_install_schema('cas_server');
+}
 
 /**
- * Creates CAS server tickets table.
+ * Implementation of hook_uninstall().
+ */
+function cas_server_uninstall() {
+  drupal_uninstall_schema('cas_server');
+}
+
+/**
+ * Implementation of hook_update_N().
  */
 function cas_server_update_1() {
   $schema = array();
