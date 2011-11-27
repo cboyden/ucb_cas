@@ -48,6 +48,13 @@ function ucb_cas_install() {
   drupal_install_modules($sub_modules);
   drupal_set_message("Installed ucb_cas dependencies: " . implode(', ', $sub_modules), 'status');
 
+  /* Login Blocks */
+  // disable user.module's login block for all themes
+  //TODO not working:
+  //db_query("UPDATE {blocks} SET status = %d, region = '%s' WHERE module = '%s' AND delta = '%s'", 0, '', 'user', '0');
+  // enable cas.module's login block 
+  //db_query("UPDATE {blocks} SET status = %d, region = %s WHERE module = '%s' AND delta = '%s' AND theme = %s", 1, 'left', 'cas', '0', 'garland');
+
   /* Settings */
   db_query("INSERT INTO `ldapauth` (`sid`, `name`, `status`, `server`, `port`, `tls`, `encrypted`, `basedn`
   , `user_attr`, `mail_attr`, `binddn`, `bindpw`, `login_php`, `filter_php`, `weight`, `ldapdata_binddn`
@@ -85,10 +92,10 @@ function ucb_cas_install() {
   variable_set("cas_hide_password",  1);
   variable_set("cas_library_dir",  "CAS");
   variable_set("cas_login_drupal_invite",  "");
-  variable_set("cas_login_form",  "1");
-  variable_set("cas_login_invite",  "Log in using CAS");
+  variable_set("cas_login_form",  "2");
+  variable_set("cas_login_invite",  "Log in using CalNet");
   variable_set("cas_login_message",  "Logged in via CalNet as %cas_username.");
-  variable_set("cas_login_redir_message",  "You will be redirected to the secure CAS login page.");
+  variable_set("cas_login_redir_message",  "");
   variable_set("cas_logout_destination",  "");
   variable_set("cas_pages",  "services/*
 node/add/*

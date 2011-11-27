@@ -92,37 +92,49 @@ override them on the appropriate admin page on your site.
 
 CAS Configuration at admin/user/cas:
 
+  *Add CAS Link to Login Forms*
+  
+    The option "Make CAS login default on login forms" has been set by
+    this module. If you have the User Login block enabled, non-logged
+    in users wil only have the option to login via CalNet (CAS).
+    
+    If either of the other two options are selected, non-authenticated
+    users will see the option to login using Drupal's standard
+    authentication (username and password text inputs boxes).  The
+    best practice for UC Berekely sites is to not present users with
+    both CalNet and Drupal's standard authentication as login
+    options. (See the IMPORTANT note below for more on this.)
+  
   *Inital login destination* and *Logout destination*
 
-	You may want to customize these. Feel free...
+     You may want to customize these. Feel free...
 
   *Users cannont change password*
 
-       Unchecking this is very likely to cause confusion.  Users
-       should change their passwords via CalNet. See *Change password
-       URL* further down.
+     Unchecking this is very likely to cause confusion.  Users should
+     change their passwords via CalNet. See *Change password URL*
+     further down.
 
   *Drupal Login Invitation*
 
-	  This setting is blank because it can cause confusion.  It
-	  adds a link to your login block allowing users to login
-	  using Drupal's stadandard authentication instead of CalNet.
-	  It's best to require ALL of your users to login via CAS and
-	  not to give them the option of using Drupal's
-	  authentication.  If you need to allow people who don't have
-	  a CalNet ID to login to your site, you can add a value like
-	  "Non-UCB people login here" to this text box.
+     This setting is blank because it can cause confusion.  It adds a
+     link to your login block allowing users to login using Drupal's
+     stadandard authentication instead of CalNet.  It's best to
+     require ALL of your users to login via CAS and not to give them
+     the option of nusing Drupal's authentication.  If you need to
+     allow people who don't have a CalNet ID to login to your site,
+     you can add a value like "Non-UCB people login here" to this text
+     box.
 
-	  IMPORTANT: If you allow standard Drupal authentication to
-	  your site you MUST run your site at an https URL.  Failure
-	  to do so is a significant security risk yielding multiple
-	  vulnerabilities. For example, anyone logging into your site
-	  from a public wireless network can easily have their
-	  password stolen.
+     IMPORTANT: If you allow standard Drupal authentication to your
+     site you MUST run your site at an https URL.  Failure to do so is
+     a significant security risk yielding multiple
+     vulnerabilities. For example, anyone logging into your site from
+     a public wireless network can easily have their password stolen.
 
-	  (There is a module in the works to facilitate using both CAS
-	  and standard Drupal authentication on a site. Email
-	  ist-drupal@lists.berkeley.edu for more information.)
+     (There is a module in the works to facilitte using both CAS and
+     standard Drupal authentication on a site. Email
+     ist-drupal@lists.berkeley.edu for more information.)
 
 Cas Attributes configuration (admin/user/cas/attributes)
 
