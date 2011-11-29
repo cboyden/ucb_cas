@@ -8,6 +8,7 @@ TABLE OF CONTENTS
 6. Launching your site (Important)
 7. Authors
 
+
 PURPOSE
 -------
 
