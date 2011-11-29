@@ -29,32 +29,26 @@ is created on your site.)
 
 REQUIREMENTS
 ------------
-
-This module requires that the token module exists on your
-site. Download the token module (http://drupal.org/project/token) and
-unpack it in your modules directory.  When you enable ucb_cas, token
-will be enabled.
-
 The modules installed by UCB CAS are:
 
-  cas
-  cas_attributes (includes cas_ldap)
-  ldap_integration (includes ldapauth, ldapdata, ldapgroups)
+cas
+cas_attributes (includes cas_ldap)
+ldap_integration (includes ldapauth, ldapdata, ldapgroups)
 
-When you install ucb_cas, it will check that your site meets it's
-requirements.  If your site does not, you will see a message.  
+Since UCB CAS installs multiple modules on your site, it's install
+process will ensure that those modules do not already exist on your
+site.  If conflicting files are found an friendly message will appear and the
+installer will abort.
 
-If you are interested in the details: Since UCB CAS installs multiple
-modules on your site, it is best to ensure that those modules do not
-already exist on your site.  The files for these modules should not
-exist in any of the directories that drupal scans for module files
+If you see this error message when you enable the module, check the
+directories that drupal scans for module files
 (e.g. sites/all/modules, sites/EXAMPLE/modules,
-sites/modules/EXAMPLE/, profiles/EXAMPLE...).  If you are already
-using any of these modules on your site, do the following:
+sites/modules/EXAMPLE/, profiles/EXAMPLE...) for conflicting modules.
+If you find conflicts:
 
-1. Disable the modules at admin/build/modules
-2. Remove the files for the modules from your site
-3. Install UCB CAS
+1. Disable the conflicting modules at admin/build/modules
+2. Remove the files for the conflicting modules from your site
+3. Enable UCB CAS
 4. Run update.php
 
 INSTALLING
