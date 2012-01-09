@@ -113,6 +113,16 @@ node/*/edit/*");
 
 }
 
+/**
+ * Implementation of hook_disable().
+ */
+function ucb_cas_disable() {
+  drupal_set_message('Note: Disabling ucb_cas does not disable its companion modules.  (However uninstalling ucb_cas *will* uninstall its companion modules. See README.txt)', 'status');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
 function ucb_cas_uninstall() {
   /* Remove modules */
 
