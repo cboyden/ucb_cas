@@ -1,15 +1,10 @@
 <?php
+define('SUBMODULES', 'cas_ldap,cas_attributes,cas,ldapdata,ldapgroups,ldapauth');
+
 function ucb_cas_requirements($phase) {
   $requirements = array();
   $t = get_t();
-  $sub_modules = array("cas_ldap",
-                       "cas_attributes",
-                       "cas",
-                       "ldapdata",
-                       "ldapgroups",
-                       "ldapauth",
-  );
-  variable_set("ucb_cas_sub_modules", $sub_modules);
+  $sub_modules = explode(',', SUBMODULES);
   
   if ($phase == 'install') {
     $paths = array();
@@ -37,7 +32,7 @@ function ucb_cas_requirements($phase) {
 
 function ucb_cas_install() {
   /* Install modules */
-  $sub_modules = variable_get("ucb_cas_sub_modules", array());
+	$sub_modules = explode(',', SUBMODULES);  
 
   /* 
    *  Why not just make the sub_modules dependencies of ucb_cas? Since
@@ -125,11 +120,9 @@ function ucb_cas_disable() {
  */
 function ucb_cas_uninstall() {
   /* Remove modules */
+	$sub_modules = explode(',', SUBMODULES);  
 
-  $sub_modules = variable_get("ucb_cas_sub_modules", array());
-  //include_once('includes/install.inc');
-  //module_rebuild_cache();
-  module_disable($sub_modules, TRUE);
+	module_disable($sub_modules, TRUE);
   foreach ($sub_modules as $sm) {
     drupal_uninstall_module($sm);
   }
