@@ -6,23 +6,6 @@ TABLE OF CONTENTS
 1.   Purpose
 2.   Quick Start
 3.   Standard Configuration 
-3.1  User Account creation (IMPORTANT)
-4.   Requirements
-5.   UCB CalNet Registration
-6.   Installing
-7.   Setup a Calnet-authenticated Administrator
-8.   Administrator "back door" for lockouts
-9.   Disabling 
-10.  Uninstalling 
-11.  Configuration Details
-12.  Launching your site (Important)
-13.  Authors
-
-TABLE OF CONTENTS
------------------
-1.   Purpose
-2.   Quick Start
-3.   Standard Configuration 
 3.1.   Security
 3.2.   User Account creation (IMPORTANT)
 3.3.   Standard configuration doesn't support "mixed mode authentication"
@@ -115,7 +98,9 @@ SSL (https) if you are using Drupal standard authentication.
 
 REQUIREMENTS
 ------------
-Your Drupal site must be registered with the UCB Calnet service. (See: UCB Calnet Registration)
+
+Your Drupal site must be registered with the UCB Calnet service. (See:
+UCB Calnet Registration)
 
 The modules installed by ucb_cas-6.x are:
 

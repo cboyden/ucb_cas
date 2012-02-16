@@ -30,7 +30,7 @@ function ucb_cas_admin_login_page() {
 function ucb_cas_admin_login($form) {
 	include_once(drupal_get_path('module', 'user') . '/user.module');
 
-	drupal_set_message('Admins should login via Calnet whenever possible.  Unless this site is running https, this form is not secure. See the ucb_cas <a href=sites/all/modules/ucb_cas/README.txt>README.txt</a>', 'warning', false);
+	drupal_set_message('Admins should login via Calnet whenever possible.  Unless this site is running https, this form is not secure. See the ucb_cas <a href="/sites/all/modules/ucb_cas/README.txt">README.txt</a>', 'warning', false);
 
 	//see user.module user_login_block() 
   $form = array(
