@@ -9,6 +9,7 @@ TABLE OF CONTENTS
 3.1.   Security
 3.2.   User Account creation (IMPORTANT)
 3.3.   Standard configuration doesn't support "mixed mode authentication"
+3.4.   Admin recommendations page
 4.   Requirements
 5.   UCB CalNet Registration
 6.   Installing
@@ -44,6 +45,9 @@ with your calnet id.
 4. As User 1 edit the new user that got created in step 2 and assign
 it the "administrator" role. (More info: Setup a Calnet-authenticated
 administrator)
+5. Visit http://example.com/admin/user/ucbcas
+
+Note: See Administrator "back door" for lockouts
 
 STANDARD CONFIGURATION
 ----------------------
@@ -96,6 +100,13 @@ choose between them everytime they login to the site. A module
 choose to adjust the ucb_cas default settings, if mma is what you
 need. Please remember that you should be running your UCB site using
 SSL (https) if you are using Drupal standard authentication.
+
+*Admin recommendations page*
+
+After installation see /admin/user/ucbcas for recommendations on fine
+tuning your CAS configuration according to common UCB Drupal site use
+cases.
+
 
 REQUIREMENTS
 ------------
